@@ -2,8 +2,6 @@
 
 ## Requirements
 - Python 2.7+
-- boto3
-- docopt
 
 ## Installation
 ### From pip:
