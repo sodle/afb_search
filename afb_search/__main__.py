@@ -12,7 +12,7 @@ Options:
     --version               Show version.
     --mac-only              Only return the MAC instead of all device info.
     --profile=<profile>     Specify AWS profile (as defined in ~/.aws/credentials) - default "default".
-    --region=<region>       Specify AWS region - defaults to the region associated with your AWS profile.
+    --region=<region>       Specify AWS region - default "us-east-1".
 """
 from __future__ import print_function
 import sys
@@ -84,12 +84,14 @@ def search_serial(afb, serial):
 def _main():
     arguments = docopt(__doc__, version='afb_search 1.0.2')
 
-    aws_kwargs = {}
+    aws_kwargs = {
+        'region_name': 'us-east-1'
+    }
 
     if arguments['--profile'] is not None:
         aws_kwargs['profile_name'] = arguments['--profile']
     if arguments['--region'] is not None:
-        aws_kwargs['region'] = arguments['--region']
+        aws_kwargs['region_name'] = arguments['--region']
 
     aws_session = boto3.Session(**aws_kwargs)
     afb = aws_session.client('alexaforbusiness')
