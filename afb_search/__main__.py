@@ -82,7 +82,7 @@ def search_serial(afb, serial):
 
 
 def _main():
-    arguments = docopt(__doc__, version='afb_search 1.0.0')
+    arguments = docopt(__doc__, version='afb_search 1.0.1')
 
     aws_kwargs = {}
     if arguments['--profile'] is not None:

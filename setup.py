@@ -3,12 +3,11 @@ from setuptools import setup
 
 setup(
     name='afb_search',
-    version='1.0.0',
+    version='1.0.1',
     description='CLI to search enrolled Alexa for Business Devices',
     author='Scott Odle',
     author_email='scott@sjodle.com',
     url='https://github.com/sodle/afb_search',
-    download_url='https://github.com/sodle/afb_search/archive/1.0.0.tar.gz',
     license='GPL v3',
     packages=['afb_search'],
     install_requires=[
