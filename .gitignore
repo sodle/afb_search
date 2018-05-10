@@ -1,0 +1,7 @@
+.ipynb_checkpoints/
+hello_afb.ipynb
+venv/
+build/
+afb_search.egg-info/
+dist/
+.idea/
