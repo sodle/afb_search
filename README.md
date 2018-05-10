@@ -6,6 +6,11 @@
 - docopt
 
 ## Installation
+### From pip:
+```
+pip install afb-search
+```
+### From source:
 ```
 ./setup.py install
 ```
