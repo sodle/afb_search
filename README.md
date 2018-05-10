@@ -26,5 +26,5 @@ Options:
     --version               Show version.
     --mac-only              Only return the MAC instead of all device info.
     --profile=<profile>     Specify AWS profile (as defined in ~/.aws/credentials) - default "default".
-    --region=<region>       Specify AWS region - defaults to the region associated with your AWS profile.
+    --region=<region>       Specify AWS region - default "us-east-1".
 ```
