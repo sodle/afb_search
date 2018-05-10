@@ -17,11 +17,11 @@ Options:
 from __future__ import print_function
 import sys
 from docopt import docopt
-from boto3 import client
+import boto3
 
 
 def print_device(dev):
-    return ('{} ({})\tSerial={}\tMAC={}\tRoom={}\t'
+    return ('"{}" ({})\tSerial={}\tMAC={}\tRoom={}\t'
             'Version={}\tStatus={}/{}').format(dev.get('DeviceName', '<No Name>'),
                                                dev['DeviceType'],
                                                dev['DeviceSerialNumber'],
@@ -85,12 +85,14 @@ def _main():
     arguments = docopt(__doc__, version='afb_search 1.0.1')
 
     aws_kwargs = {}
+
     if arguments['--profile'] is not None:
         aws_kwargs['profile_name'] = arguments['--profile']
     if arguments['--region'] is not None:
         aws_kwargs['region'] = arguments['--region']
 
-    afb = client('alexaforbusiness')
+    aws_session = boto3.Session(**aws_kwargs)
+    afb = aws_session.client('alexaforbusiness')
 
     if arguments['list']:
         list_devices(afb, arguments['--mac-only'])
