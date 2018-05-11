@@ -3,6 +3,8 @@
 # Bash Script to list the MAC address of each Echo enrolled in Alexa for Business,
 # across multiple AWS accounts and regions.
 # Scott Odle, Arizona State University <sjodle@asu.edu>, 2018
+#
+# Requires Python 2.7+ and the afb-search package from Pip
 ###
 
 # List of AWS accounts to search, as defined by profiles in the AWS CLI credentials file (~/.aws/credentials)
