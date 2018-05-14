@@ -14,12 +14,10 @@ $ACCOUNTS = @( 'default', 'my-corporate-account', 'my-dev-account', 'student-acc
 # and searching another region will cause an error.
 $REGIONS = @( 'us-east-1' )
 
-for($i = 0; $i -lt $ACCOUNTS.Length; $i++)
+foreach($acct in $ACCOUNTS)
 {
-    $acct = $ACCOUNTS[$i]
-    for ($j = 0; $j -lt $REGIONS.Length; $j++)
+    foreach($reg in $REGIONS)
     {
-        $reg = $REGIONS[$j]
         Write-Host "Searching region $reg, account $acct."
         afb_search list --mac-only --region=$reg --profile=$acct
     }
